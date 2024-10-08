@@ -11,9 +11,20 @@ class Thread(models.Model):
     poster = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="news_posts")
     body = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-posted_on"]
+    def __str__(self):
+        return f"{self.title} - {self.poster}"    
 
 class Response(models.Model):
+    """
+    Stores a reponse post related to :model `auth.Thread`
+    """
     thread = models.ForeignKey(Thread, on_delete=models.RESTRICT, related_name="responses")
     poster = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="responder")
     body = models.TextField()
-    posted_on = models.DateTimeField(auto_now_add=True)    
+    posted_on = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ["-posted_on"]
+    def __str__(self):
+        return f"{self.body} - {self.poster}"    
