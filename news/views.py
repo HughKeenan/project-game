@@ -8,4 +8,4 @@ class ThreadList(generic.ListView):
     Displays all objects in the Threads model
     """
     queryset = Thread.objects.all()
-    template_name = "thread_list.html"
+    template_name = "news/index.html"
