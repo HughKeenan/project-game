@@ -19,7 +19,7 @@ class TestThread(TestCase):
         
 
     def test_thread_str(self):
-        """Test the sales string representation."""
+        """Test the thread string representation."""
         self.assertEqual(
             (
                 str(self.model.body)
@@ -49,7 +49,7 @@ class TestResponse(TestCase):
         
 
     def test_response_str(self):
-        """Test the sales string representation."""
+        """Test the response string representation."""
         self.assertEqual(
             (
                 str(self.model.body)
