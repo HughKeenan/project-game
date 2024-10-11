@@ -3,4 +3,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.ThreadList.as_view(), name='threadlist'),
+    path('<slug:slug>/', views.thread_detail, name='thread_detail'),
 ]
