@@ -1,13 +1,14 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 {% load static %}
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                <!-- Thread title-->
                 <h1 class="thread-title">{{ thread.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
+                <!-- Thread's poster and date of posting-->
                 <p class="thread-subtitle">{{ thread.poster }} | {{ thread.posted_on }}</p>
             </div>
         </div>
@@ -18,8 +19,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
+                <!-- Thread body. -->
                 <p class="card-text">
                     {{ thread.body | safe }}
                 </p>

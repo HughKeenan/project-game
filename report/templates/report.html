@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+  <div class="row">
+    {{ report.content | safe }}
+    <p>Page for reporting users</p>
+  </div>
+  
+</div>
+{% endblock content %}

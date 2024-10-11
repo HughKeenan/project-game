@@ -10,5 +10,11 @@ class ThreadAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('body',)
 
-# Register your models here.
-admin.site.register(Response)
+@admin.register(Response)
+class ResponseAdmin(SummernoteModelAdmin):
+    list_display = ('thread', 'poster', "posted_on")
+    search_fields = ['thread', 'poster', 'posted_on']
+    list_filter = ('posted_on', 'poster',)
+    summernote_fields = ('body',)    
+
+
