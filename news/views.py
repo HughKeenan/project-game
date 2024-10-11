@@ -25,8 +25,8 @@ def thread_detail(request, slug):
     :template:`news/thread_detail.html`
     """
 
-    queryset = Thread.objects.filter(status=0)
-    post = get_object_or_404(queryset, slug=slug)
+    queryset = Thread.objects.filter(visible=0)
+    thread = get_object_or_404(queryset, slug=slug)
 
     return render(
         request,
