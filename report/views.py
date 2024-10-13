@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from .models import Report
 
-
-def report_user(request):
+# Create your views here.
+def report_guide(request):
     """
     Renders the Report page
     """
-    report = Report.objects.all()
+    report = Report.objects.all().order_by('-updated_on').first()
 
     return render(
         request,
