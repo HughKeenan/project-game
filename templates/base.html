@@ -1,6 +1,9 @@
 {% load static %}
 {% url 'threadlist' as home_url %}
 {% url 'report' as report_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +38,6 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarInfo">
-            <a class="navbar-brand" href="#">Hidden brand</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link {% if request.path == home_url %} active{% endif %}"
@@ -46,11 +48,22 @@
                       {% if request.path == report_url %}active{%endif%}" aria-current="page"
                         href="{% url 'report' %}">Report</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
     <!--Main body-->
