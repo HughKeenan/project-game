@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Report
+from .models import Report, ReportUser
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -9,3 +9,8 @@ from django_summernote.admin import SummernoteModelAdmin
 class ReportAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('content',)
+
+@admin.register(ReportUser)
+class ReportUserAdmin(SummernoteModelAdmin):
+
+    list_display = ('reason_for_report', 'examined',)    
