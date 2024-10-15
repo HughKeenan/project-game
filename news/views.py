@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Thread, Response
+from .models import Thread, Response, NewThread
 from .forms import ResponseForm
 
 # Create your views here.
@@ -88,3 +88,16 @@ def response_delete(request, slug, response_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
+
+def new_thread(request):
+    """
+    Renders the New Thread page
+    """
+    new = NewThread.objects.all()
+    template = "news/new.html"
+    
+    return render(
+        request,
+        template,
+        {"new": new},
+    )

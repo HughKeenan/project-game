@@ -31,4 +31,12 @@ class Response(models.Model):
     class Meta:
         ordering = ["-posted_on"]
     def __str__(self):
-        return f"{self.body} - {self.poster}"    
+        return f"{self.body} - {self.poster}"   
+
+
+class NewThread(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title         
