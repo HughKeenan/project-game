@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
-from .models import Thread
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from .models import Thread, Response
 from .forms import ResponseForm
 
 # Create your views here.
@@ -50,3 +52,39 @@ def thread_detail(request, slug):
             "response_form": response_form,
             },
     )
+
+def response_edit(request, slug, response_id):
+    """
+    view to edit responses
+    """
+    if request.method == "POST":
+
+        queryset = Thread.objects.filter(visible=0)
+        thread = get_object_or_404(queryset, slug=slug)
+        response = get_object_or_404(Response, pk=response_id)
+        response_form = ResponseForm(data=request.POST, instance=response)
+
+        if response_form.is_valid() and response.poster == request.user:
+            response = response_form.save(commit=False)
+            response.thread = thread
+            response.save()
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
+    return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
+
+def response_delete(request, slug, response_id):
+    """
+    view to delete responses
+    """
+    queryset = Thread.objects.filter(visible=0)
+    thread = get_object_or_404(queryset, slug=slug)
+    response = get_object_or_404(Response, pk=response_id)
+
+    if response.poster == request.user:
+        response.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+
+    return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
