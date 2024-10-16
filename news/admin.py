@@ -19,4 +19,4 @@ class ResponseAdmin(SummernoteModelAdmin):
 
 @admin.register(NewThread)
 class NewThreadAdmin(SummernoteModelAdmin):
-    summernote_fields = ('body',)  
+    summernote_fields = ('content',)  
