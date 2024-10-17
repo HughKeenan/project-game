@@ -1,0 +1,24 @@
+/*Navbar style rules*/
+.sitename{
+    font-family: 'Pixelify Sans';
+    font-size: 150%;
+    color: rgb(255, 255, 255);
+}
+
+.nav-link{
+    font-family: 'Nanum Gothic';
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.nav-item{
+    padding-right: 40px;
+}
+
+/*Footer style rules*/
+.footertext{
+    color: rgb(255, 255, 255);
+    font-family: 'Nanum Gothic';
+}
+
+
