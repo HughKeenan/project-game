@@ -45,32 +45,28 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarInfo">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <!--<li class="nav-item active">
-                    <a class="nav-link {% if request.path == home_url %} active{% endif %}"
-                        href="{% url 'threadlist' %}">Home <span class="sr-only">(current)</span></a>
-                </li>-->
+            <ul class="navbar-nav mr-auto mt-auto">
                 {% if user.is_authenticated %}
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link
                       {% if request.path == report_url %}active{%endif%}" aria-current="page"
                         href="{% url 'report' %}">Report User</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link
                       {% if request.path == new_url %}active{%endif%}" aria-current="page" href="{% url 'new' %}">New
                         Thread</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                         href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
                         href="{% url 'account_signup' %}">Register</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-active">
                     <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                         href="{% url 'account_login' %}">Login</a>
                 </li>
@@ -85,14 +81,14 @@
         {% endblock content %}
     </main>
     <!--Footer-->
-    <footer class="container-fluid bg-black">
-            <p class="text-center footertext">Follow us for more:</p>
-            <p class ="text-center">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-youtube"></i></a>
-            </p>
-            <p class="text-center footertext">Hugh Keenan 2024</p>
+    <footer class="fixed-bottom bg-black">
+        <p class="text-center footertext">Follow us for more:</p>
+        <p class ="text-center">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="link-light fa-brands fa-youtube"></i></a>
+        </p>
+        <p class="text-center footertext">Copyright Hugh Keenan 2024</p>
     </footer>
 
     <script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
