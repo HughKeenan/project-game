@@ -58,6 +58,7 @@ main{
     border-radius: 10px;
 }
 
-
-
+.colorcard{
+    background-color: rgb(179, 192, 204);
+}
 
