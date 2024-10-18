@@ -30,7 +30,7 @@ def thread_detail(request, slug):
 
     queryset = Thread.objects.filter(visible=0)
     thread = get_object_or_404(queryset, slug=slug)
-    responses = thread.responses.all().order_by("-posted_on")
+    responses = thread.responses.all().order_by("posted_on")
     response_count = thread.responses.filter().count()
     if request.method == "POST":
         response_form = ResponseForm(data=request.POST)
@@ -69,7 +69,7 @@ def response_edit(request, slug, response_id):
             response.thread = thread
             response.save()
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, 'Error updating response!')
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
 
