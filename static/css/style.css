@@ -1,3 +1,9 @@
+/*General style rules*/
+.colorcard{
+    background-color: rgb(179, 192, 204);
+}
+
+
 /*Navbar style rules*/
 .sitename{
     font-family: 'Pixelify Sans';
@@ -19,6 +25,10 @@
     padding-right: 40px;
 }
 
+.navbar-nav {
+    margin: 0;
+}
+
 /*Body style rules*/
 body{
     background-color: rgb(124, 195, 249);
@@ -31,6 +41,7 @@ body{
 main{
     margin-bottom: 10rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 50vh;
 }
 
 /*Footer style rules*/
@@ -62,10 +73,70 @@ main{
     border-radius: 10px;
 }
 
-.colorcard{
-    background-color: rgb(179, 192, 204);
+
+/*Media query for phones*/
+
+@media screen and (max-width: 425px){
+
+    .navlist{
+        padding-left: 15px;
+    }
+
+    main{
+        max-width: 90vw;
+        padding-left: 5vw;
+    }
+
+    .signin, .signout{
+        padding-left: 20px;
+        width: 80vw;
+    }
+
+    .sign-up{
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 75vw;
+    }
+
 }
 
-.sign-in{
-    color: black;
+
+/*Media queries for tablets*/
+@media screen and (max-width: 768px){
+
+    .navlist{
+        padding-left: 15px;
+    }
+
+    main{
+        max-width: 90vw;
+        padding-left: 5vw;
+    }
+
+    .signin, .signout{
+        padding-left: 20px;
+        width: 75vw;
+    }
+
+    .sign-up{
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 75vw;
+    }
 }
+
+@media screen and (min-width: 768px) {
+    .navbar-expand-lg {
+       padding: 15px;
+    }
+}
+
+/*Media query for larger screens*/
+@media screen and (min-width: 1440px){
+
+    main{
+        min-height: 65vh;
+    }
+
+}
+

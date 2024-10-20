@@ -6,15 +6,17 @@
 
 {% block content %}
 <div class="container">
-  <div class="card colorcard mt-3 pt-2 pb-4">
+  <div class="col-10 card colorcard mt-3 pt-2 pb-4 sign-up">
     <div class="row">
       <div class="offset-md-2">
         <h3>{% trans "Sign Up" %}</h3>
 
         <p>{% blocktrans %}
           Welcome to Project Game.
+        </p>
+        <p>
           If you're already registered please
-          <a class="sign-in" href="{{ login_url }}">sign in.</a>
+          <a href="{{ login_url }}">sign in.</a>
           {% endblocktrans %}</p>
       </div>
     </div>
