@@ -99,5 +99,5 @@ def new_thread(request):
     return render(
         request,
         template,
-        {"new": new},
+        {"new": new,},
     )
