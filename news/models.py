@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
 
 VISIBLE = ((0, "Visible"), (1, "Invisible"))
 
@@ -17,7 +18,12 @@ class Thread(models.Model):
     class Meta:
         ordering = ["-posted_on"]
     def __str__(self):
-        return f"{self.title} - {self.poster}"    
+        return f"{self.title} - {self.poster}" 
+
+    def save(self):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save()           
 
 class Response(models.Model):
     """

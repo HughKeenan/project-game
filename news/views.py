@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Thread, Response, NewThread
-from .forms import ResponseForm
+from .forms import ResponseForm, ThreadForm
 
 # Create your views here.
 class ThreadList(generic.ListView):
@@ -96,8 +96,18 @@ def new_thread(request):
     new = NewThread.objects.all()
     template = "news/new.html"
     
+    thread_form = ThreadForm()
+
+    if request.method == "POST":
+        thread_form = ThreadForm(data=request.POST)
+        if thread_form.is_valid():
+            thread = thread_form.save(commit=False)
+            thread.poster = request.user
+            thread.save()
+
     return render(
         request,
         template,
-        {"new": new,},
+        {"new": new,
+        "thread_form": thread_form,},
     )

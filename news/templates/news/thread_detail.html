@@ -29,6 +29,10 @@
           {{ thread.body | safe }}
         </p>
         <hr>
+        {% if user.is_authenticated and thread.poster == user %}
+            <button class="btn btn-edit btn-dark" thread_id="{{ thread.id }}">Edit</button>
+            <button class="btn btn-delete btn-dark" thread_id="{{ thread.id }}">Delete</button>
+        {% endif %}
         <div>
           {% for response in responses %}
           <div>

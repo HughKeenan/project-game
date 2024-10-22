@@ -17,4 +17,20 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card col-10 py-2 colorcard">
+      <div>
+        <h2 class="text-center">New Thread</h2>
+        <!-- Form to report users -->
+        <form method="post">
+          {{ thread_form | crispy }}
+          {% csrf_token %}
+          <button class="btn btn-dark" type="submit">Post Thread</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
