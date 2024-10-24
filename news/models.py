@@ -31,13 +31,13 @@ class Response(models.Model):
     """
     poster = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="responder")
     thread = models.ForeignKey(Thread, on_delete=models.RESTRICT, related_name="responses")
-    body = models.TextField()
+    content = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
     visible = models.IntegerField(choices=VISIBLE, default=0)
     class Meta:
         ordering = ["posted_on"]
     def __str__(self):
-        return f"{self.body} - {self.poster}"   
+        return f"{self.content} - {self.poster}"   
 
 
 class NewThread(models.Model):

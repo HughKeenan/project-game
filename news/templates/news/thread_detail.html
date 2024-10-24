@@ -8,7 +8,7 @@
     <div class="row">
       <div class="text-center">
         <!-- Thread title-->
-        <h1 class="thread-title">{{ thread.title }}</h1>
+        <h1 class="thread-title" title_id="{{ title.id }}">{{ thread.title }}</h1>
       </div>
       <!-- Thread's poster and date of posting-->
       <div class="text-start">
@@ -23,16 +23,18 @@
 <div class="container">
   <div class="row">
     <div class="col card colorcard mt-3">
-      <div class="card-body">
+      <div class="card-body" >
+        <div>
         <!-- Thread body. -->
-        <p class="card-text">
+        <p class="card-text" id="thread{{ thread.id }}">
           {{ thread.body | safe }}
         </p>
         <hr>
         {% if user.is_authenticated and thread.poster == user %}
-            <button class="btn btn-edit btn-dark" thread_id="{{ thread.id }}">Edit</button>
+            <button class="threadButton btn btn-dark" thread_id="{{ thread.id }}">Edit</button>
             <button class="btn btn-delete btn-dark" thread_id="{{ thread.id }}">Delete</button>
         {% endif %}
+      </div>
         <div>
           {% for response in responses %}
           <div>
@@ -41,7 +43,7 @@
               </strong>
             </p>
             <div id="response{{ response.id }}">
-              {{ response.body | linebreaks }}
+              {{ response.content | linebreaks }}
             </div>
             {% if user.is_authenticated and response.poster == user %}
             <button class="btn btn-edit btn-dark" response_id="{{ response.id }}">Edit</button>
@@ -52,6 +54,26 @@
           {% endfor %}
         </div>
         
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Editing threads -->
+<div class="container">
+  <div class="row">
+    <div class="col-12 card colorcard mb-4 mt-3">
+      <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Update thread</h3>
+        <form id="ThreadForm" method="post" style="margin-top: 1.3em;">
+          {{ thread_form | crispy }}
+          {% csrf_token %}
+          <button id="submitThreadButton" type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        {% else %}
+        <p>Log in to edit thread</p>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -103,4 +125,5 @@
 
 {% block extras %}
 <script src="{% static 'js/responses.js' %}"></script>
+<script src="{% static 'js/thread.js' %}"></script>
 {% endblock %}

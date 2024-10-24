@@ -15,7 +15,7 @@ class ResponseAdmin(SummernoteModelAdmin):
     list_display = ('thread', 'poster', "posted_on")
     search_fields = ['thread', 'poster', 'posted_on']
     list_filter = ('posted_on', 'poster',)
-    summernote_fields = ('body',)    
+    summernote_fields = ('content',)    
 
 @admin.register(NewThread)
 class NewThreadAdmin(SummernoteModelAdmin):

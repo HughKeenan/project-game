@@ -5,7 +5,7 @@ from django import forms
 class ResponseForm(forms.ModelForm):
     class Meta:
         model = Response
-        fields = ('body',)
+        fields = ('content',)
 
 class ThreadForm(forms.ModelForm):
     class Meta:

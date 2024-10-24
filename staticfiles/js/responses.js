@@ -1,5 +1,5 @@
 const editButtons = document.getElementsByClassName("btn-edit");
-const responseText = document.getElementById("id_content");
+const responseText = document.getElementById("id_body");
 const responseForm = document.getElementById("responseForm");
 const submitButton = document.getElementById("submitButton");
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));

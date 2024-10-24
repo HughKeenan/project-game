@@ -39,7 +39,8 @@ def thread_detail(request, slug):
             response.poster = request.user
             response.thread = thread
             response.save()
-            
+
+    thread_form = ThreadForm()        
     response_form = ResponseForm()
 
     return render(
@@ -47,11 +48,31 @@ def thread_detail(request, slug):
         "news/thread_detail.html",
         {
             "thread": thread,
+            "thread_form": thread_form,
             "responses": responses,
             "response_count": response_count,
             "response_form": response_form,
             },
     )
+
+def thread_edit(request, slug, thread_id):
+    """
+    view to edit threads
+    """
+    if request.method == "POST":
+
+        queryset = Thread.objects()
+        thread = get_object_or_404(queryset, slug=slug, pk=thread_id)
+        thread_form = ThreadForm(data=request.POST, instance=thread)
+
+        if thread_form.is_valid() and thread.poster == request.user:
+            updatethread = thread_form.save(commit=False)
+            updatethread.thread = thread
+            thread.save()
+        else:
+            messages.add_message(request, messages.ERROR, 'Error!')
+
+    return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
 
 def response_edit(request, slug, response_id):
     """
