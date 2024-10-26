@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+"""
+Stores the guidelines on reporting users
+"""
 class Report(models.Model):
     title = models.CharField(max_length=250)
     updated_on = models.DateTimeField(auto_now=True)
@@ -10,6 +13,9 @@ class Report(models.Model):
         return self.title
 
 
+"""
+Stores a report post on a specific user
+"""
 class ReportUser(models.Model):
     thread_url = models.URLField(blank=False)
     user_being_reported = models.CharField(blank=False)

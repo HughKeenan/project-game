@@ -1,6 +1,10 @@
 from . import views
 from django.urls import path
 
+"""
+url patterns for news app
+"""
+
 urlpatterns = [
     path('', views.ThreadList.as_view(), name='threadlist'),
     path('new-thread/', views.new_thread, name='new'),

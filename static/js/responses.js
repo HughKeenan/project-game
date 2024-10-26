@@ -7,7 +7,7 @@ const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
 /**
-* Provides edit function for buttons on threads and responses.
+* Provides edit function for responses.
 */
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
@@ -20,7 +20,7 @@ for (let button of editButtons) {
 }
 
 /**
-* Provides delete function for buttons on threads and responses.
+* Provides delete function for responses.
 */
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {

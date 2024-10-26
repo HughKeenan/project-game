@@ -60,15 +60,18 @@ def thread_edit(request, slug, thread_id):
     view to edit threads
     """
     if request.method == "POST":
+        print("editing post")
 
         queryset = Thread.objects()
         thread = get_object_or_404(queryset, slug=slug, pk=thread_id)
         thread_form = ThreadForm(data=request.POST, instance=thread)
 
         if thread_form.is_valid() and thread.poster == request.user:
-            updatethread = thread_form.save(commit=False)
-            updatethread.thread = thread
-            thread.save()
+            print("saving change")
+            threadForm = thread_form.save(commit=False)
+            threadForm.title = title
+            threadForm.body = body
+            threadForm.save()
         else:
             messages.add_message(request, messages.ERROR, 'Error!')
 
@@ -89,6 +92,7 @@ def response_edit(request, slug, response_id):
             response = response_form.save(commit=False)
             response.thread = thread
             response.save()
+            print("saving change")
         else:
             messages.add_message(request, messages.ERROR, 'Error updating response!')
 
@@ -104,9 +108,9 @@ def response_delete(request, slug, response_id):
 
     if response.poster == request.user:
         response.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Response deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR, "You cannot delete others' responses")
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
 

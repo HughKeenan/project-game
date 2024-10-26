@@ -1,5 +1,5 @@
 const editThreadButtons = document.getElementsByClassName("threadButton");
-const threadTitle = document.getElementById("titleBox")
+const threadTitle = document.getElementById("id_title")
 const threadText = document.getElementById("id_body");
 const threadForm = document.getElementById("threadForm");
 const submitThreadButton = document.getElementById("submitThreadButton");
@@ -10,9 +10,9 @@ const submitThreadButton = document.getElementById("submitThreadButton");
 
 for (let button of editThreadButtons) {
   button.addEventListener("click", (e) => {
-    let titleId = e.target.getAttribute("titleBox");
+    let titleId = e.target.getAttribute("title_id");
     let threadId = e.target.getAttribute("thread_id");
-    let titleContent = document.getElementById(`thread${titledId}`).innerText;
+    let titleContent = document.getElementById(`title`).innerText;
     let threadContent = document.getElementById(`thread${threadId}`).innerText;
     threadTitle.value = titleContent
     threadText.value = threadContent;
