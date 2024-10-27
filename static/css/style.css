@@ -3,6 +3,12 @@
     background-color: rgb(179, 192, 204);
 }
 
+.messagebox{
+    background-color: rgb(179, 192, 204);
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
 
 /*Navbar style rules*/
 .sitename{

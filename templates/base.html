@@ -34,51 +34,68 @@
 </head>
 
 <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'threadlist' %}"><span class="sitename">Project Game</span></a>
-        </div>
-        <div class="row">
-            <div class="navbar-button">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarInfo"
-                    aria-controls="navbarInfo" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'threadlist' %}"><span class="sitename">Project Game</span></a>
             </div>
+            <div class="row">
+                <div class="navbar-button">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarInfo"
+                        aria-controls="navbarInfo" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
 
-            <div class="collapse navbar-collapse" id="navbarInfo">
-                <ul class="navbar-nav mr-auto mt-auto navlist">
-                    <li class="nav-item-active"></li>
-                    <a class="nav-link
-                      {% if request.path == home_url %}active{%endif%}" aria-current="page"
-                        href="{% url 'threadlist' %}">Home</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item-active">
+                <div class="collapse navbar-collapse" id="navbarInfo">
+                    <ul class="navbar-nav mr-auto mt-auto navlist">
+                        <li class="nav-item-active"></li>
                         <a class="nav-link
+                      {% if request.path == home_url %}active{%endif%}" aria-current="page"
+                            href="{% url 'threadlist' %}">Home</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item-active">
+                            <a class="nav-link
                       {% if request.path == report_url %}active{%endif%}" aria-current="page"
-                            href="{% url 'report' %}">Report User</a>
-                    </li>
-                    <li class="nav-item-active">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item-active">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    <li class="nav-item-active">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    {% endif %}
-                </ul>
+                                href="{% url 'report' %}">Report User</a>
+                        </li>
+                        <li class="nav-item-active">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item-active">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item-active">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Main body-->
+
+    <!-- message display -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                    fade show messagebox" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </nav>
-    <!--Main body-->
+    </div>
     <main>
         {% block content %}
         <!-- Page content -->

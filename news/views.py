@@ -38,7 +38,9 @@ def thread_detail(request, slug):
             response = response_form.save(commit=False)
             response.poster = request.user
             response.thread = thread
+            messages.add_message(request, messages.SUCCESS, 'Response posted!')
             response.save()
+            
      
     response_form = ResponseForm()
 
@@ -68,7 +70,7 @@ def response_edit(request, slug, response_id):
             response = response_form.save(commit=False)
             response.thread = thread
             response.save()
-            print("saving change")
+            messages.add_message(request, messages.SUCCESS, 'Response updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating response!')
 
@@ -86,6 +88,6 @@ def response_delete(request, slug, response_id):
         response.delete()
         messages.add_message(request, messages.SUCCESS, 'Response deleted!')
     else:
-        messages.add_message(request, messages.ERROR, "You cannot delete others' responses")
+        messages.add_message(request, messages.ERROR, "You cannot delete others' responses!")
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
