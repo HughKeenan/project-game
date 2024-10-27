@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Thread, Response, NewThread
-from .forms import ResponseForm, ThreadForm
+from .models import Thread, Response
+from .forms import ResponseForm
 
 # Create your views here.
 class ThreadList(generic.ListView):
@@ -39,8 +39,7 @@ def thread_detail(request, slug):
             response.poster = request.user
             response.thread = thread
             response.save()
-
-    thread_form = ThreadForm()        
+     
     response_form = ResponseForm()
 
     return render(
@@ -48,34 +47,11 @@ def thread_detail(request, slug):
         "news/thread_detail.html",
         {
             "thread": thread,
-            "thread_form": thread_form,
             "responses": responses,
             "response_count": response_count,
             "response_form": response_form,
             },
     )
-
-def thread_edit(request, slug, thread_id):
-    """
-    view to edit threads
-    """
-    if request.method == "POST":
-        print("editing post")
-
-        queryset = Thread.objects()
-        thread = get_object_or_404(queryset, slug=slug, pk=thread_id)
-        thread_form = ThreadForm(data=request.POST, instance=thread)
-
-        if thread_form.is_valid() and thread.poster == request.user:
-            print("saving change")
-            threadForm = thread_form.save(commit=False)
-            threadForm.title = title
-            threadForm.body = body
-            threadForm.save()
-        else:
-            messages.add_message(request, messages.ERROR, 'Error!')
-
-    return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
 
 def response_edit(request, slug, response_id):
     """
@@ -113,26 +89,3 @@ def response_delete(request, slug, response_id):
         messages.add_message(request, messages.ERROR, "You cannot delete others' responses")
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
-
-def new_thread(request):
-    """
-    Renders the New Thread page
-    """
-    new = NewThread.objects.all()
-    template = "news/new.html"
-    
-    thread_form = ThreadForm()
-
-    if request.method == "POST":
-        thread_form = ThreadForm(data=request.POST)
-        if thread_form.is_valid():
-            thread = thread_form.save(commit=False)
-            thread.poster = request.user
-            thread.save()
-
-    return render(
-        request,
-        template,
-        {"new": new,
-        "thread_form": thread_form,},
-    )

@@ -30,10 +30,6 @@
           {{ thread.body | safe }}
         </p>
         <hr>
-        {% if user.is_authenticated and thread.poster == user %}
-            <button class="threadButton btn btn-dark" thread_id="{{ thread.id }}">Edit</button>
-            <button class="btn btn-delete btn-dark" thread_id="{{ thread.id }}">Delete</button>
-        {% endif %}
       </div>
       <!-- Responses to thread -->
         <div>
@@ -55,26 +51,6 @@
           {% endfor %}
         </div>
         
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Editing threads -->
-<div class="container">
-  <div class="row">
-    <div class="col-12 card colorcard mb-4 mt-3">
-      <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Update thread</h3>
-        <form id="ThreadForm" method="post" style="margin-top: 1.3em;">
-          {{ thread_form | crispy }}
-          {% csrf_token %}
-          <button id="submitThreadButton" type="submit" class="btn btn-dark">Submit</button>
-        </form>
-        {% else %}
-        <p>Log in to edit thread</p>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -126,5 +102,4 @@
 
 {% block extras %}
 <script src="{% static 'js/responses.js' %}"></script>
-<script src="{% static 'js/thread.js' %}"></script>
 {% endblock %}

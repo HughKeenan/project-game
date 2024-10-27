@@ -38,6 +38,7 @@ Pixelify Sans was used for the site logo as it provides a thematic way to presen
 
 1. Thread Model
 This provides the structure for the threads that users can post and respond to. 
+
 |Name|Key|Field Type|Validation|
 |--|--|--|--|
 |Title|title|CharacterField|max_length=150, unique = True, blank=False|
@@ -48,6 +49,7 @@ This provides the structure for the threads that users can post and respond to.
 
 2. Response Model
 This provides the structure for the reponses that users can post, edit and delete from threads. 
+
 |Name|Key|Field Type|Validation|
 |--|--|--|--|
 |Poster|poster|ForeignKey|User, on_delete=models.RESTRICT, related_name="news_posts"|
@@ -57,6 +59,7 @@ This provides the structure for the reponses that users can post, edit and delet
 
 3. Report Model
 This provides the guidelines users should follow when reporting specific individuals. 
+
 |Name|Key|Field Type|Validation|
 |--|--|--|--|
 |Title|title|CharacterField|max_length=150, unique = True, blank=False|
@@ -65,6 +68,7 @@ This provides the guidelines users should follow when reporting specific individ
 
 4. Report User Model
 Provides structure for users to input information when reporting others that admins can read
+
 |Name|Key|Field Type|Validation|
 |--|--|--|--|
 |Thread URL|thread_url|URLField|blank=False|

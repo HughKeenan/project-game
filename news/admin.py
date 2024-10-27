@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Thread, Response, NewThread
+from .models import Thread, Response
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Thread)
@@ -16,8 +16,3 @@ class ResponseAdmin(SummernoteModelAdmin):
     search_fields = ['thread', 'poster', 'posted_on']
     list_filter = ('posted_on', 'poster',)
     summernote_fields = ('content',)    
-
-@admin.register(NewThread)
-class NewThreadAdmin(SummernoteModelAdmin):
-    list_display = ('title',)
-    summernote_fields = ('content',)  

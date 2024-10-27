@@ -7,8 +7,5 @@ class ResponseForm(forms.ModelForm):
         model = Response
         fields = ('content',)
 
-class ThreadForm(forms.ModelForm):
-    class Meta:
-        model = Thread
-        fields = ('title', 'body',)        
+     
    

@@ -61,11 +61,6 @@
                             href="{% url 'report' %}">Report User</a>
                     </li>
                     <li class="nav-item-active">
-                        <a class="nav-link
-                      {% if request.path == new_url %}active{%endif%}" aria-current="page" href="{% url 'new' %}">New
-                            Thread</a>
-                    </li>
-                    <li class="nav-item-active">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>

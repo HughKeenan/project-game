@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.template.defaultfilters import slugify
 
 VISIBLE = ((0, "Visible"), (1, "Invisible"))
 
@@ -38,11 +37,4 @@ class Response(models.Model):
         ordering = ["posted_on"]
     def __str__(self):
         return f"{self.content} - {self.poster}"   
-
-
-class NewThread(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-
-    def __str__(self):
-        return self.title         
+      
