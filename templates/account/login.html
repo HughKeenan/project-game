@@ -16,7 +16,8 @@
                 <p>{% blocktrans %}Welcome back to Project Game.</p>
                 <p> To start a new thread or reply to an existing one,
                     please log in.</p>
-                <p>If you have not created an account yet, then please <a class="link" href="{{ signup_url }}">register</a>
+                <p>If you have not created an account yet, then please <a class="link" href="{{ signup_url }}"
+                        aria-label="register page">register</a>
                     first.{% endblocktrans %}</p>
             </div>
         </div>
@@ -28,7 +29,7 @@
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-dark right" type="submit">{% trans "Sign In" %}</button>
+                    <button class="btn btn-dark right" type="submit" aria-label="Sign in">{% trans "Sign In" %}</button>
                 </form>
             </div>
         </div>

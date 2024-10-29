@@ -38,41 +38,41 @@
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'threadlist' %}"><span class="sitename">Project Game</span></a>
+                <a class="navbar-brand" href="{% url 'threadlist' %}" aria-label="Link to home page"><span
+                        class="sitename">Project Game</span></a>
             </div>
             <div class="row">
                 <div class="navbar-button">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarInfo"
-                        aria-controls="navbarInfo" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarInfo" aria-expanded="false" aria-label="Navbar toggler">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-
                 <div class="collapse navbar-collapse" id="navbarInfo">
                     <ul class="navbar-nav mr-auto mt-auto navlist">
                         <li class="nav-item-active"></li>
                         <a class="nav-link
-                      {% if request.path == home_url %}active{%endif%}" aria-current="page"
-                            href="{% url 'threadlist' %}">Home</a>
+                      {% if request.path == home_url %}active" aria-current="page{%endif%}"
+                            href="{% url 'threadlist' %}" aria-label="Link to home page">Home</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item-active">
                             <a class="nav-link
-                      {% if request.path == report_url %}active{%endif%}" aria-current="page"
-                                href="{% url 'report' %}">Report User</a>
+                      {% if request.path == report_url %}active" aria-current="page{%endif%}" href="{% url 'report' %}"
+                                aria-label="Link to report user page">Report User</a>
                         </li>
                         <li class="nav-item-active">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_logout' %}" aria-label="Link to logout page">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item-active">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_login' %}" aria-label="Link to login page">Login</a>
                         </li>
                         <li class="nav-item-active">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_signup' %}" aria-label="Link to register page">Register</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -80,7 +80,6 @@
             </div>
         </nav>
     </header>
-    <!--Main body-->
 
     <!-- message display -->
     <div class="container">
@@ -90,12 +89,14 @@
                 <div class="alert {{ message.tags }} alert-dismissible
                     fade show messagebox" role="alert">
                     {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close messagee"></button>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
+    <!--Main body-->
     <main>
         {% block content %}
         <!-- Page content -->
@@ -103,13 +104,14 @@
     </main>
 
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav aria-label="Navigation between pages">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> Previous</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous page">
+                    Previous</a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next page"> Next</a></li>
             {% endif %}
         </ul>
     </nav>
@@ -119,12 +121,13 @@
     <footer class="col-12 pb-1 bg-black">
         <p class="text-center footertext">Follow us for more:</p>
         <p class="text-center">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
-                    class="link-light fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                aria-label="Visit Project Game's Facebook page"><i class="link-light fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                aria-label="Visit Project Game's Instagram page"><i
                     class="link-light fa-brands fa-square-instagram"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i
-                    class="link-light fa-brands fa-youtube"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                aria-label="Visit Project Game's Youtube page"><i class="link-light fa-brands fa-youtube"></i></a>
         </p>
         <p class="text-center footertext">Copyright Hugh Keenan 2024</p>
     </footer>

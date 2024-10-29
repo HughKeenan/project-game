@@ -61,9 +61,9 @@ def response_edit(request, slug, response_id):
     """
     if request.method == "POST":
 
-        queryset = Thread.objects.filter(visible=0)
-        thread = get_object_or_404(queryset, slug=slug)
-        response = get_object_or_404(Response, pk=response_id)
+        queryset = Response.objects.filter(visible=True)
+        thread = get_object_or_404(Thread, slug=slug)
+        response = get_object_or_404(queryset, pk=response_id)
         response_form = ResponseForm(data=request.POST, instance=response)
 
         if response_form.is_valid() and response.poster == request.user:
@@ -80,9 +80,9 @@ def response_delete(request, slug, response_id):
     """
     view to delete responses
     """
-    queryset = Thread.objects.filter(visible=0)
-    thread = get_object_or_404(queryset, slug=slug)
-    response = get_object_or_404(Response, pk=response_id)
+    queryset = Response.objects.filter(visible=True)
+    thread = get_object_or_404(Thread, slug=slug)
+    response = get_object_or_404(queryset, pk=response_id)
 
     if response.poster == request.user:
         response.delete()

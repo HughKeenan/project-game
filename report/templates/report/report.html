@@ -27,7 +27,7 @@
         <form method="post">
           {{ report_user | crispy }}
           {% csrf_token %}
-          <button class="btn btn-dark" type="submit">Submit Report</button>
+          <button class="btn btn-dark" type="submit" aria-label="Submit report">Submit Report</button>
         </form>
       </div>
     </div>

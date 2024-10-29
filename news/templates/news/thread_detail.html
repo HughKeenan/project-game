@@ -10,7 +10,7 @@
         <!-- Thread title-->
         <h1 class="thread-title" id="title">{{ thread.title }}</h1>
       </div>
-      <!-- Thread's poster and date of posting-->
+      <!-- Thread poster and date of posting-->
       <div class="text-start">
         <h2>{{ thread.poster }}</h2>
         <p>{{ thread.posted_on }}</p>
@@ -43,8 +43,8 @@
               {{ response.content | linebreaks }}
             </div>
             {% if user.is_authenticated and response.poster == user %}
-            <button class="btn btn-edit btn-dark" response_id="{{ response.id }}">Edit</button>
-            <button class="btn btn-delete btn-dark" response_id="{{ response.id }}">Delete</button>
+            <button class="btn btn-edit btn-dark" response_id="{{ response.id }}" aria-label="Edit response">Edit</button>
+            <button class="btn btn-delete btn-dark" response_id="{{ response.id }}" aria-label="Delete response">Delete</button>
             {% endif %}
             <hr>
           </div>
@@ -67,7 +67,7 @@
         <form id="responseForm" method="post" style="margin-top: 1.3em;">
           {{ response_form | crispy }}
           {% csrf_token %}
-          <button id="submitButton" type="submit" class="btn btn-submit btn-dark">Submit</button>
+          <button id="submitButton" type="submit" class="btn btn-submit btn-dark" aria-label="Submit response">Submit</button>
         </form>
         {% else %}
         <p>Log in to post a response</p>
@@ -79,7 +79,7 @@
 
 
 <!-- Modal to confirm deletion of response -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteResponse" tabindex="-1" aria-labelledby="deleteResponseLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
