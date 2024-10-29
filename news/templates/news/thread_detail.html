@@ -12,9 +12,8 @@
       </div>
       <!-- Thread poster and date of posting-->
       <div class="text-start">
-        <h2>{{ thread.poster }}</h2>
-        <p>{{ thread.posted_on }}</p>
-        <span>Responses: {{ response_count }}</span>
+        <h2>Posted by: {{ thread.poster }}</h2>
+        <p>Posted on: {{ thread.posted_on }}</p>
       </div>
     </div>
   </div>
@@ -31,7 +30,19 @@
         </p>
         <hr>
       </div>
-      <!-- Responses to thread -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Responses to thread -->
+<div class="container">
+  <div class="row mt-3">
+    <h3>Responses: {{ response_count }}</h3>
+  </div>
+  <div class="row">
+    <div class="col card colorcard">
+      <div class="card-body" >
         <div>
           {% for response in responses %}
           <div>
@@ -43,18 +54,17 @@
               {{ response.content | linebreaks }}
             </div>
             {% if user.is_authenticated and response.poster == user %}
-            <button class="btn btn-edit btn-dark" response_id="{{ response.id }}" aria-label="Edit response">Edit</button>
-            <button class="btn btn-delete btn-dark" response_id="{{ response.id }}" aria-label="Delete response">Delete</button>
+            <button class="btn edit-response btn-dark" response_id="{{ response.id }}" aria-label="Edit response">Edit Response</button>
+            <button class="btn delete-response btn-dark" response_id="{{ response.id }}" aria-label="Delete response">Delete Response</button>
             {% endif %}
             <hr>
           </div>
           {% endfor %}
         </div>
-        
       </div>
     </div>
   </div>
-</div>
+</div>        
 
 <!-- Posting new responses -->
 <div class="container">
@@ -63,11 +73,12 @@
       <div class="card-body">
         {% if user.is_authenticated %}
         <h3>Post a response:</h3>
+        <p>Let us know your thoughts on this!</p>
         <p>Posting as: {{ user.username }}</p>
         <form id="responseForm" method="post" style="margin-top: 1.3em;">
           {{ response_form | crispy }}
           {% csrf_token %}
-          <button id="submitButton" type="submit" class="btn btn-submit btn-dark" aria-label="Submit response">Submit</button>
+          <button id="submitButton" type="submit" class="btn btn-submit btn-dark" aria-label="Submit response">Submit Response</button>
         </form>
         {% else %}
         <p>Log in to post a response</p>

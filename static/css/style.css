@@ -79,6 +79,10 @@ main{
     border-radius: 10px;
 }
 
+.edit-response, .delete-response{
+    margin-top: 10px;
+}
+
 
 /*Media query for phones*/
 
