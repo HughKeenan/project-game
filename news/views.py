@@ -28,9 +28,9 @@ def thread_detail(request, slug):
     :template:`news/thread_detail.html`
     """
 
-    queryset = Thread.objects.filter(visible=0)
+    queryset = Thread.objects.all()
     thread = get_object_or_404(queryset, slug=slug)
-    responses = thread.responses.all().order_by("posted_on")
+    responses = thread.responses.filter(visible=True).order_by("posted_on")
     response_count = thread.responses.filter().count()
     if request.method == "POST":
         response_form = ResponseForm(data=request.POST)

@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-VISIBLE = ((0, "Visible"), (1, "Invisible"))
 
 # Create your models here.
 """
@@ -13,16 +12,11 @@ class Thread(models.Model):
     poster = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="news_posts")
     body = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
-    visible = models.IntegerField(choices=VISIBLE, default=0)
     class Meta:
         ordering = ["-posted_on"]
     def __str__(self):
         return f"{self.title} - {self.poster}" 
-
-    def save(self):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        return super().save()           
+          
 
 class Response(models.Model):
     """
@@ -32,7 +26,7 @@ class Response(models.Model):
     thread = models.ForeignKey(Thread, on_delete=models.RESTRICT, related_name="responses")
     content = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
-    visible = models.IntegerField(choices=VISIBLE, default=0)
+    visible = models.BooleanField(default=True)
     class Meta:
         ordering = ["posted_on"]
     def __str__(self):
