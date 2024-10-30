@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
+from django.urls import reverse
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Thread, Response
@@ -40,6 +41,7 @@ def thread_detail(request, slug):
             response.thread = thread
             messages.add_message(request, messages.SUCCESS, 'Response posted!')
             response.save()
+            return HttpResponseRedirect(reverse("thread_detail", args=[slug]))
             
      
     response_form = ResponseForm()

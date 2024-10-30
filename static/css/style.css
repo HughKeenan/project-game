@@ -50,6 +50,11 @@ main{
     min-height: 50vh;
 }
 
+.signInNotice{
+    padding-left: 2.5vw;
+    font-size: 125%;
+}
+
 /*Footer style rules*/
 
 .footertext{
