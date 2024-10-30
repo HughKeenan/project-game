@@ -22,7 +22,7 @@ class Response(models.Model):
     """
     Stores a reponse post related to :model `auth.Thread`
     """
-    poster = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="responder")
+    poster = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     thread = models.ForeignKey(Thread, on_delete=models.RESTRICT, related_name="responses")
     content = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
