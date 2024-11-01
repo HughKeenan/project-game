@@ -13,7 +13,7 @@ class ThreadList(generic.ListView):
     """
     queryset = Thread.objects.all()
     template_name = "news/index.html"
-    paginate_by = 3
+    paginate_by = 5
 
 def thread_detail(request, slug):
     """
