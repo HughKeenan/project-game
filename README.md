@@ -14,16 +14,41 @@ Pixelify Sans was used for the site logo as it provides a thematic way to presen
 
 ## Technologies used
 ### Languages
-+ Python
-+ HTML
-+ javaScript
-+ CSS
++ Python - the language used to develop the server side of the site
++ HTML - markup language used to create the site
++ javaScript - used to develop interactive elements of the site
++ CSS - used to style the site
 
 ### Frameworks and Libraries
-+ Django
-+ jQuery
++ Django - the python framework used to create the site's logic
++ jQuery - used to control click events and AJAX requests
++ Bootstrap - CSS framework used to help style the site
 
+### Databases
++ SQLite: database used during development 
++ PostgreSQL: tUsed to store project data
+
+### Other tools
++ Git: Used for version control
++ Pip3: used to install the dependencies
++ Gunicorn: webserver used to run the site
++ Spycopg2: the database driver used to connect to the database
++ Django-allauth: authentication library used to create users
++ Django-crispy-forms: Used to help render Django forms
+Render: the cloud platform used to host the website.
+ElephantSQL: the cloud database used to store all the data.
++ GitHub: used to host source code
+Gitpod: IDE used for development.
++ Chrome DevTools: used to help with debugging
++ Font Awesome: used for footer icons
++ Miro: website used to make a flowchart and wireframes
+Coolors was used to make a color palette for the website.
++ W3C Validator: Used to validate HTML code
++ W3C CSS validator: Used to validate CSS code
++ JShint: Used to validate JS code
++ PEP8: Used to validate python code
 ## Features
+
 
 
 ### Colours and typography
@@ -36,6 +61,8 @@ Pixelify Sans was used for the site logo as it provides a thematic way to presen
 [Wireframes](features/wireframes)
 
 [Organisational-Flowchart](features/flowchart)
+
+There is a difference visible between the flowchart and wireframes and what was deployed. The differences in layout were decided on because the current layout was found to be as easy to read as the inital proposal, and required less adjustment for smaller and larger screen sizes, resulting in a more consistent layout. The proposed feature that would have allowed users to post and edit threads of their own was implemented but had to be removed from the project due to time constraints. Ongoing difficulties implementing the update and delete functionality caused significant delays and the feature had to be scrapped to ensure and MVP would be deployed. 
 
 ## Information Architecture
 ### ERD

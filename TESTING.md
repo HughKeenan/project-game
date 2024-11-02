@@ -1,3 +1,4 @@
+# Manual Testing
 Manual testing of features was conducted as they were added. However, once principal work on the project was completed, formalised manual testing of all features was conducted  to ensure full functionality.
 
 Navigation between pages
@@ -58,3 +59,54 @@ Report Users
 |Report User Form|User submits form with any field blank|Rejected as all fields are required|Yes|N/A|
 |Report User Form|Submit incorrect data types|Rejected as model calls for specific data types in specific fields|Yes|N/A|
 |Report User Form|Submit properly completed form|User gets notification saying submission was successful, report appears under report users in backend|Yes|N/A|
+
+
+In addition to the front end items, manual tesing was conducted on items in the admin page
+Threads
+|Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
+|--|--|--|--|--|
+|Threads|Create and post new thread|New thread becomes visible in list and goes to the top of the front end thread list|Yes|N/A|
+|Threads|Click on thread in list to see content|View of thread content in summernote editor|Yes|N/A|
+|Threads|Edit thread body in summernote editor|Changes show in thread content on front end|Yes|N/A|
+|Threads|Delete thread from list|Thread disappears from list and frontend|Yes|N/A|
+
+Reports
+|Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
+|--|--|--|--|--|
+|Reports|Click on report guidelines entry to view details|View of report guidelines in summernote editor|Yes|N/A|
+|Reports|Update report guidelines in summernote editor|Front end shows updated content and date of update|Yes|N/A|
+
+Report Users
+|Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
+|--|--|--|--|--|
+|Reports|Click on a report in list to view details|View of report details|Yes|N/A|
+|Reports|Mark report as examined|Status in list changes to mark report as examined|Yes|N/A|
+
+Responses
+|Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
+|--|--|--|--|--|
+|Responses|Click on a response in list to view details|View of response details|Yes|N/A|
+|Responses|Uncheck visible to hide response|Response is no longer visible in front end|Yes|N/A|
+
+Users
+|Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
+|--|--|--|--|--|
+|Users|Click on a user in list to view details|View of user details|Yes|N/A|
+|Users|Uncheck is_active|User is no longer able to sign in|Yes|N/A|
+
+## Bugs
+### Fixed Bugs
++ Feedback messages for reporting users, posting or updating responses etc. initially did not work despit the code being present in the views.py file. It emerged this was because the code to display them had not been added to base.html, and they worked once it was.
+
++ The About Us link was initially non-responsive. This was due to an error in how the slug was being passed to the html template, and once the code was updated to use the url name only it was resolved
+
++ Refreshing the page after posting a response caused it to be duplicated. This was caused by the lack of a redirect, adding a redirect and importing reverse from Django.urls solved it
+
++ The visibility toggle for responses caused the edit & delete functionality to stop. This was because the view was picking up the thread as a queryset as opposed to the reponse
+
++ The Report User page was visible by a non-signed in user in an incognito page. This was fixed by adding a login decorator to the report view
+
++ After adding in the views for the report app, access was temporarily lost to the admin page. Reordering them to put admin at the top in settings.py fixed this
+
+### Unresolved bugs
++ double clicking the button to post a response causes duplicate entries. Due to time constraints I was unable to fix this
