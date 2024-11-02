@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Thread(models.Model):
     """
     Stores a thread post related to :model `auth.User`

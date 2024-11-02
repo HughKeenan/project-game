@@ -9,6 +9,7 @@ The colour scheme of the site was inspired by that of the forums on escapistmaga
 
 Pixelify Sans was used for the site logo as it provides a thematic way to present the site without compromising on readability. Gill Sans was chosen for the main body elements, Nanum Gothic for the footer and Rubik for the links to threads and the names of who posted a given entry. This variance of font styles on the page allowed elements to be visually distinct without becoming distracting.
 
+
 ## User Stories
 
 ## Technologies used
@@ -23,6 +24,12 @@ Pixelify Sans was used for the site logo as it provides a thematic way to presen
 + jQuery
 
 ## Features
+
+
+### Colours and typography
+The colour scheme of the site was inspired by that of the forums on escapistmagazine.com. This was chosen because the colours are not distracting but provide a high enough contrast that everything is easily readable. Colours such as these are often used as standard in games consoles and websites, making the website more thematic.
+
+Pixelify Sans was used for the site logo as it provides a thematic way to present the site without compromising on readability. Gill Sans was chosen for the main body elements, Nanum Gothic for the footer and Rubik for the links to threads and the names of who posted a given entry. This variance of font styles on the page allowed elements to be visually distinct without becoming distracting.
 
 
 ### Wireframes & Flowcharts
