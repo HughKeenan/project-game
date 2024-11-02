@@ -1,7 +1,6 @@
 {% load static %}
 {% url 'threadlist' as home_url %}
 {% url 'report' as report_url %}
-{% url 'new' as new_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -15,7 +14,7 @@
     <meta name="description"
     content="Project Game provides a discussion forum for those interested in gaming" />
     <meta name="keywords"
-      content="gaming, video games, technology, gaming blog, forum, news, gaming news, indie games, game development" />
+      content="gaming, video games, technology, gaming blog, forum, gaming forum, news, gaming news, indie games, game development" />
     <meta name="author" content="Hugh Keenan" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Google Fonts-->
@@ -59,6 +58,11 @@
                         <a class="nav-link
                       {% if request.path == home_url %}active" aria-current="page{%endif%}"
                             href="{% url 'threadlist' %}" aria-label="Link to home page">Home</a>
+                        </li>
+                        <li class="nav-item-active"></li>
+                        <a class="nav-link
+                      {% if request.path == about_us %}active" aria-current="page{%endif%}"
+                            href="{% url 'about_us' %}" aria-label="Link to information page">About Us</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item-active">
