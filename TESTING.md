@@ -115,6 +115,16 @@ Users
 
 ## Code Validation
 
+### HTML Validation
+The HTML code was validated using the W3C checker. The only errors that appeared were related to the helptext passed in by allauth in the case of signup.html, and the content coming through from the backend in the case of thread_detail.html
+
+[HTML Validation Report](documentation/validation/html.pdf)
+
+### CSS Validation
+No errors were found in the CSS. This was done by direct input into the Jigsaw validator
+
+[CSS Validation Report](documentation/validation/css.png)
+
 ## Lighthouse Report
 
 Thread List

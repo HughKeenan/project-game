@@ -12,10 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-    content="Project Game provides a discussion forum for those interested in gaming" />
+    content="Project Game provides a discussion forum for those interested in gaming">
     <meta name="keywords"
-      content="gaming, video games, technology, gaming blog, forum, gaming forum, news, gaming news, indie games, game development" />
-    <meta name="author" content="Hugh Keenan" />
+      content="gaming, video games, technology, gaming blog, forum, gaming forum, news, gaming news, indie games, game development">
+    <meta name="author" content="Hugh Keenan">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +30,10 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--Favicon-->
-    <link rel="icon" type="image/png" href="{% static 'images/favicons/icons8-game-color-16.png' %}" sizes="16x16" />
-    <link rel="icon" type="image/png" href="{% static 'images/favicons/icons8-game-color-32.png' %}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{% static 'images/favicons/favicon-48x48.png' %}" sizes="48x48" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/icons8-game-color-16.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/icons8-game-color-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/favicons/favicon-48x48.png' %}" sizes="48x48">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-touch-icon.png' %}">
     <title>Project Game</title>
 </head>
 
@@ -54,12 +54,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbarInfo">
                     <ul class="navbar-nav mr-auto mt-auto navlist">
-                        <li class="nav-item-active"></li>
+                        <li class="nav-item-active">
                         <a class="nav-link
                       {% if request.path == home_url %}active" aria-current="page{%endif%}"
                             href="{% url 'threadlist' %}" aria-label="Link to home page">Home</a>
                         </li>
-                        <li class="nav-item-active"></li>
+                        <li class="nav-item-active">
                         <a class="nav-link
                       {% if request.path == about_us %}active" aria-current="page{%endif%}"
                             href="{% url 'about_us' %}" aria-label="Link to information page">About Us</a>
