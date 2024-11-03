@@ -186,3 +186,81 @@ If they sign out they will be redirected to the home page and they will receive 
 ![Sign Out Message](documentation/features/sign_out/sign_out_message.png)
 
 ### Report User
+
+This page is available to users to report others for inappropriate behavious on the site. By clicking the Report User button in the navbar, this will open in a separate window.
+
+![Report User](documentation/features/report_user/report_user.png)
+
+The form requires specific data types in order to be submitted successfully. If the user attempts to submit the form with blank fields or data that doesn't match the required type, they will see an error message like this one:
+
+![Report User](documentation/features/report_user/report_form_error.png)
+
+If the user submits the for correctly, the page will refresh and the report form will be blank, in case they wish to submit another. They will receive the following message:
+
+![Report Message](documentation/features/report_user/report_message.png)
+
+
+## Admin Features
+This site is dependent on input from the superusers, who can post new content from the admin page, accessed by appending '/admin' to the homepage url
+
+### Post threads
+Superusers can post new threads to the site. This is accessed by the Threads option in the admin menu
+![Admin Menu](documentation/features/admin/admin_menu.png)
+
+![Threads Menu](documentation/features/admin/thread_menu.png)
+
+By selecting New thread in the top left, a new one can be posted
+
+![New Thread](documentation/features/admin/new_thread.png)
+
+Once saved, this will appear in the list of threads, and at the top of the list on the front end, and may be accessed and interacted with like any other thread
+
+![Posted Thread](documentation/features/admin/posted_thread.png)
+
+![Posted Thread Content](documentation/features/admin/posted_thread_content.png)
+
+Existing threads can also be edited by selecting them from the list and changing the text using the summernote editor
+
+![Edited Thread](documentation/features/admin/edited_thread.png)
+
+![Edited Thread Content](documentation/features/admin/edited_thread_content.png)
+
+Posted threads can also be deleted by selecting them in the list and choosing to delete in the dropdown menu.
+
+### Reports
+
+The report guidelines can be updated in much the same way as a thread by selecting reports from the list in the main admin page and then selecting the report entry
+
+![Report Guidelines](documentation/features/admin/reports.png)
+
+To view submitted reports, select Report Users. The title is visible, as is the status of whether or not it has been looked at yet. 
+
+![Reports on users](documentation/features/admin/reports.png)
+
+By selecting it, the superuser can review it and once satisfied, change the status to examined
+
+![Report details](documentation/features/admin/report_details.png)
+
+This will update it in the list.
+
+![Examined report](documentation/features/admin/examined_report.png)
+
+And it can then be deleted in the same manner as a thread.
+
+While this is being examined, comments that have been reported on can be rendered invisible while the admin decides what to do.
+
+This is done by selecting a response from the list under Responses, the same manner as a thread. Once viewing the details, the comment can be disabled by unchecking the 'Visible' box. This is to ensure that anything unsuitable can be hidden while still being retained in case authorities need to be contacted.
+
+![Response details](documentation/features/admin/response_details.png)
+
+This is the view before the check:
+
+![Visible Response](documentation/features/admin/visible_response.png)
+
+And after:
+
+![Invisible Response](documentation/features/admin/invisible_response.png)
+
+Once the response has been rendered invisible, reported users can have their accounts disabled. To do this, select users from the menu and then the porfile of the specific user being reported. Once in there, the Active box can be unchecked, at which point the user will be unable to log in until it is unchecked. Users can then be deleted if necessary. Any responses will remain on the database, again in case they contain anything requiring further investigation.
+
+![User details](documentation/features/admin/user_details.png)

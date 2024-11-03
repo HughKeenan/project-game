@@ -31,6 +31,7 @@ Sign In/Out
 |Sign In form|Submit an empty form|Rejected with message to fill in required field|Yes|N/A|
 |Sign In form|Submit a form with wrong password|Rejected with message saying incorrect password|Yes|N/A|
 |Sign In form|Submit form with correct details|Successful sign in|Yes|N/A|
+|Sign In form|Submit form as suspended user|Unable to sign in|Yes|N/A|
 |Sign Out form|Confirm sign out by clicking button to confirm|Successful sign out|Yes|N/A|
 
 Post new response to thread
