@@ -116,6 +116,27 @@ Users
 
 ## Lighthouse Report
 
+Thread List
+![Thread List](documentation/lighthouse_reports/thread_list.png)
+
+Thread Content
+![Thread Content](documentation/lighthouse_reports/thread_content.png)
+
+About Us
+![About Us](documentation/lighthouse_reports/about_us.png)
+
+Login
+![Login](documentation/lighthouse_reports/sign_in.png)
+
+Log Out
+![Log Out](documentation/lighthouse_reports/sign_out.png)
+
+Register
+![Register](documentation/lighthouse_reports/register.png)
+
+Report User
+![Report User](documentation/lighthouse_reports/report_user.png)
+
 ## Compatibility testing
 Compatibility was tested using the following browsers:
 
