@@ -150,3 +150,39 @@ A message will also display.
 This is an entry in the thread list intended to function as a page to explain to new users the purpose of the site. It can be accessed by scrolling through the list like any other thread, but it was decided that having a dedicated link would be a better user experience. As it's a thread like the others, it shares all of the functions mentioned in the thread content section
 
 ![About Us](documentation/features/about_us/about_us.png)
+
+### Login
+Users who already have an account can use this page to sign in to the site.
+
+![Sign In](documentation/features/sign_in/sign_in.png)
+
+If the user doesn't have an existing account they can redirect to the register page using this link:
+
+![Redirect to register](documentation/features/sign_in/redirect_to_register.png)
+
+If the user attempts to sign in without a username, they will get the following error:
+
+![No Username](documentation/features/sign_in/no_username.png)
+
+If the user attempts to sign in without a password, they will receive the following error:
+
+![No Password](documentation/features/sign_in/no_password.png)
+
+If the user uses an incorrect password, they will see the following:
+
+![Wrong Password](documentation/features/sign_in/wrong_password.png)
+
+If the user signs in successfully, they will be redirected to the home page and receive the following message:
+
+![Successful Sign in](documentation/features/sign_in/successful_sign_in.png)
+
+### Logout
+Signed in users can use this to log out of the site by clicking the Sign out button.
+
+![Sign Out](documentation/features/sign_out/sign_out.png)
+
+If they sign out they will be redirected to the home page and they will receive a notifcation
+
+![Sign Out Message](documentation/features/sign_out/sign_out_message.png)
+
+### Report User
