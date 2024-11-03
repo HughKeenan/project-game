@@ -21,19 +21,19 @@ This site has been designed to have a simple easy to understand layout. The targ
 ### Colours and typography
 The colour scheme of the site was inspired by that of the forums on escapistmagazine.com. This was chosen because the colours are not distracting but provide a high enough contrast that everything is easily readable. Colours such as these are often used as standard in games consoles and websites, making the website more thematic.
 
-![Color palette](documentation/design/Color%20pallette.png)
+![Color palette](documentation/design/color_palette.png)
 
 Pixelify Sans was used for the site logo as it provides a thematic way to present the site without compromising on readability.
-![Pixelify Sans](documentation/design/Pixelify%20Sans.png)
+![Pixelify Sans](documentation/design/pixelify_sans.png)
 
 Gill Sans was chosen for the main body elements.
-![Gill Sans](documentation/design/Gill%20Sans.png)
+![Gill Sans](documentation/design/gill_sans.png)
 
 Nanum Gothic for the footer. 
-![Nanum Gothic](documentation/design/Nanum%20Gothic.png)
+![Nanum Gothic](documentation/design/nanum_gothic.png)
 
 Rubik for the links to threads and the names of who posted a given entry
-![Rubik](documentation/design/Rubik.png)
+![Rubik](documentation/design/rubik.png)
 
 This variance of font styles on the page allowed elements to be visually distinct without becoming distracting.
 
@@ -80,7 +80,7 @@ Please refer to [FEATURES.md] for a full breakdown of site features.
 Wireframes for the site and the flowchart for how users interact with it are available through the following links:
 [Wireframes](documentation/diagrams/wireframes)
 
-[Organisational-Flowchart](documentation/diagrams/Navigation%20flowchart.pdf)
+[Organisational-Flowchart](documentation/diagrams/navigation_flowchart.pdf)
 
 There is a difference visible between the flowchart and wireframes and what was deployed. The differences in layout were decided on because the current layout was found to be as easy to read as the inital proposal, and required less adjustment for smaller and larger screen sizes, resulting in a more consistent layout. The proposed feature that would have allowed users to post and edit threads of their own was implemented but had to be removed from the project due to time constraints. Ongoing difficulties implementing the update and delete functionality caused significant delays and the feature had to be scrapped to ensure and MVP would be deployed. 
 
@@ -88,7 +88,7 @@ There is a difference visible between the flowchart and wireframes and what was 
 ### ERD
 The Entity Relationship Diagram created using Microsoft Word.
 
-[Entity Relationship Diagram](documentation/diagrams/ERD%20diagram.png)
+[Entity Relationship Diagram](documentation/diagrams/erd_diagram.png)
 
 ### Data Modelling
 
@@ -100,7 +100,7 @@ This provides the structure for the threads that site owners can post and users 
 |Title|title|CharacterField|max_length=150, unique = True, blank=False|
 |Slug|slug|SlugField|max_length=200, unique=True|
 |Poster|poster|ForeignKey|User, on_delete=models.RESTRICT, related_name="news_posts"|
-|Body|body|TextField|--|
+|Body|body|TextField|blank=False|
 |Posted on|posted_on|DateTimeField|auto_now_add=True|
 
 2. Response Model
@@ -110,7 +110,7 @@ This provides the structure for the reponses that users can post, edit and delet
 |--|--|--|--|
 |Poster|poster|ForeignKey|User, on_delete=models.RESTRICT, related_name="news_posts"|
 |Thread|thread|ForeignKey|Thread, on_delete=models.RESTRICT, related_name="responses"|
-|Content|content|TextField|--|
+|Content|content|TextField|blank=False|
 |Posted on|posted_on|DateTimeField|auto_now_add=True|
 
 3. Report Model
@@ -120,7 +120,7 @@ This provides the guidelines users should follow when reporting specific individ
 |--|--|--|--|
 |Title|title|CharacterField|max_length=150, unique = True, blank=False|
 |Updated on|updated_on|DateTimeField|auto_now_add=True|
-|Content|content|TextField|--|
+|Content|content|TextField|blank=False|
 
 4. Report User Model
 Provides structure for users to input information when reporting others that admins can read

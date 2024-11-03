@@ -109,4 +109,15 @@ Users
 + After adding in the views for the report app, access was temporarily lost to the admin page. Reordering them to put admin at the top in settings.py fixed this
 
 ### Unresolved bugs
-+ double clicking the button to post a response causes duplicate entries. Due to time constraints I was unable to fix this
++ double clicking the button to post a response causes duplicate entries. Due to time constraints I was unable to fix this.
+
+## Compatibility testing
+Compatibility was tested using the following browsers:
+
++ Chrome
++ Firefox
++ Edge
+
+Please find the compatibility report here: [Compatibility Report](documentation/compatibility/compatibility_report.pdf)
+
+## Responsiveness
