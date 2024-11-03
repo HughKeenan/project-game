@@ -25,6 +25,7 @@ It looks as follows to a user who is signed in:
 
 And it has the following buttons:
 
+
 ![Home Button](documentation/features/navbar/home.png)
 
 ![About Us Button](documentation/features/navbar/about_us.png)
@@ -75,10 +76,10 @@ If they try to submit without repeating the password, they will see the followin
 
 If the submitted passwords don't match, they will see the following:
 
-![Passwords Not matching](documentation/features/register/password_non-match.png)
+![Passwords Not matching](documentation/features/register/password_non_match.png)
 
 ### Thread list
-The homepage is the most recent entries in the list of threads that makes up the site's content. This was designed to have a clean, uncomplicated look which was inspired by sites like Reddit and the forum pages on Escapistmagazine, with a list of threads prominently displayed with clearly legible titles. It does not change depending on login status.
+The homepage is the most recent entries in the list of threads that makes up the site's content. This was designed to have a clean, uncomplicated look which was inspired by sites like Reddit and the forum pages on Escapistmagazine, with a list of threads prominently displayed with clearly legible titles. It does not change depending on login status. Each entry displays the title and username of the person who posted it, along with the date of post.
 
 ![Thread List](documentation/features/thread_list/thread_list.png)
 
@@ -91,34 +92,34 @@ At the bottom of the page, there are buttons that can be used to navigate to old
 From the homepage, one can click on the title of any thread to view its contents. The view presented will depend on the status of the user.
 
 Users who are not signed in will see the following:
-![](documentation/features/)
+![Thread Content (not signed in)](documentation/features/thread_content/thread_content_signed_out.png)
 
 A user must be authenticated before being allowed to respond to threads. A user who is signed in will see the following:
-![](documentation/features/)
+![Thread Content (signed in)](documentation/features/thread_content/thread_content_signed_in.png)
 
-On posting a response, it will appear beneath the thread, along with the options to edit or delete it. The counter of responses will also increment up
-![](documentation/features/)
+The user may fill out a response in the form and post with the submit button. On posting a response, it will appear beneath the thread, along with the options to edit or delete it. The counter of responses will also increment up
+![Response Posted](documentation/features/thread_content/response_posted.png)
 
 The user will also receive a message to say that they have posted
-![](documentation/features/)
+![Posted message](documentation/features/thread_content/posted_message.png)
 
-If the user decides to update, the response form will repopulate with the text of their response
-![](documentation/features/)
+If the user decides to update by pressing the update button below the form, the response form will repopulate with the text of their response. The button below will also change to say update.
+![Update Response](documentation/features/thread_content/update_response.png)
 
 Any updates will be posted in their original position.
-![](documentation/features/)
+![Response Updated](documentation/features/thread_content/response_updated.png)
 
 And a message will be displayed
-![](documentation/features/)
+![Updated message](documentation/features/thread_content/updated_message.png)
 
 If the user chooses to delete, a modal asking for confirmation will appear
-![](documentation/features/)
+![Delete Modal](documentation/features/thread_content/delete_modal.png)
 
-The user may choose to cancel, in which case the page view will be unchanged. If the choose to delete, the response in question will be removed and the counter will decrement
-![](documentation/features/)
+The user may choose to cancel, in which case the page view will be unchanged. If they choose to delete, the response in question will be removed and the counter will decrement
+![Response after delete](documentation/features/thread_content/responses_after_delete.png)
 
 A message will also display
-![](documentation/features/)
+![Deleted Message](documentation/features/thread_content/deleted_message.png)
 
 
 
