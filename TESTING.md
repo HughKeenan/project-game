@@ -125,6 +125,16 @@ No errors were found in the CSS. This was done by direct input into the Jigsaw v
 
 [CSS Validation Report](documentation/validation/css.png)
 
+### JS Validation
+The js for the project was validated using the jshint validator. It passed through with no errors or warnings.
+
+[JS Validation Report](documentation/validation/js.png)
+
+### Python validation 
+The python code was validated using the CI PEP8 linter by manually passing code into it. No errors were detected.
+
+[Python Validation Report](documentation/validation/python.pdf)
+
 ## Lighthouse Report
 
 Thread List

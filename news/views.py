@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from .models import Thread, Response
 from .forms import ResponseForm
 
-# Create your views here.
+
 class ThreadList(generic.ListView):
     """
     Displays all objects in the Threads model
@@ -14,6 +14,7 @@ class ThreadList(generic.ListView):
     queryset = Thread.objects.all()
     template_name = "news/index.html"
     paginate_by = 5
+
 
 def thread_detail(request, slug):
     """
@@ -42,8 +43,7 @@ def thread_detail(request, slug):
             messages.add_message(request, messages.SUCCESS, 'Response posted!')
             response.save()
             return HttpResponseRedirect(reverse("thread_detail", args=[slug]))
-            
-     
+
     response_form = ResponseForm()
 
     return render(
@@ -56,6 +56,7 @@ def thread_detail(request, slug):
             "response_form": response_form,
             },
     )
+
 
 def response_edit(request, slug, response_id):
     """
@@ -72,11 +73,14 @@ def response_edit(request, slug, response_id):
             response = response_form.save(commit=False)
             response.thread = thread
             response.save()
-            messages.add_message(request, messages.SUCCESS, 'Response updated!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Response updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating response!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating response!')
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))
+
 
 def response_delete(request, slug, response_id):
     """
@@ -90,6 +94,7 @@ def response_delete(request, slug, response_id):
         response.delete()
         messages.add_message(request, messages.SUCCESS, 'Response deleted!')
     else:
-        messages.add_message(request, messages.ERROR, "You cannot delete others' responses!")
+        messages.add_message(request, messages.ERROR,
+                             "You cannot delete others' responses!")
 
     return HttpResponseRedirect(reverse('thread_detail', args=[slug]))

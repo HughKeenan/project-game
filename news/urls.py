@@ -12,5 +12,5 @@ urlpatterns = [
     path('<slug:slug>/edit_response/<int:response_id>',
          views.response_edit, name='response_edit'),
     path('<slug:slug>/delete_response/<int:response_id>',
-         views.response_delete, name='response_delete'),     
+         views.response_delete, name='response_delete'),
 ]
