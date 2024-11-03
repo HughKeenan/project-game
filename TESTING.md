@@ -121,3 +121,5 @@ Compatibility was tested using the following browsers:
 Please find the compatibility report here: [Compatibility Report](documentation/compatibility/compatibility_report.pdf)
 
 ## Responsiveness
+
+Responsivity was tested manually using Chrome Devtools as the site was being developed. Once completed it was checked using the responsive viewer Chrome extension
