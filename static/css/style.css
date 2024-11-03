@@ -90,7 +90,6 @@ main{
 
 
 /*Media query for phones*/
-
 @media screen and (max-width: 425px){
 
     .navlist{
@@ -100,6 +99,7 @@ main{
     main{
         max-width: 90vw;
         padding-left: 5vw;
+        min-height: 70vh;
     }
 
     .signin, .signout{
@@ -126,6 +126,7 @@ main{
     main{
         max-width: 90vw;
         padding-left: 5vw;
+        min-height: 70vh;
     }
 
     .signin, .signout{
@@ -143,6 +144,12 @@ main{
 @media screen and (min-width: 768px) {
     .navbar-expand-lg {
        padding: 15px;
+    }
+
+    main{
+        max-width: 90vw;
+        padding-left: 5vw;
+        min-height: 70vh;
     }
 }
 

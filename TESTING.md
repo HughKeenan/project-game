@@ -1,4 +1,5 @@
-# Manual Testing
+# Testing
+## Manual Testing
 Manual testing of features was conducted as they were added. However, once principal work on the project was completed, formalised manual testing of all features was conducted  to ensure full functionality.
 
 Navigation between pages
@@ -111,6 +112,10 @@ Users
 ### Unresolved bugs
 + double clicking the button to post a response causes duplicate entries. Due to time constraints I was unable to fix this.
 
+## Code Validation
+
+## Lighthouse Report
+
 ## Compatibility testing
 Compatibility was tested using the following browsers:
 
@@ -123,3 +128,5 @@ Please find the compatibility report here: [Compatibility Report](documentation/
 ## Responsiveness
 
 Responsivity was tested manually using Chrome Devtools as the site was being developed. Once completed it was checked using the responsive viewer Chrome extension
+
+PLease find the full report here: [Responsiveness Report](documentation/responsiveness/responsiveness.pdf)
