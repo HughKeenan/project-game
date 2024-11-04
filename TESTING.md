@@ -63,7 +63,7 @@ Report Users
 |Report User Form|Submit properly completed form|User gets notification saying submission was successful, report appears under report users in backend|Yes|N/A|
 
 
-In addition to the front end items, manual tesing was conducted on items in the admin page
+In addition to the front end items, manual testing was conducted on items in the admin page
 Threads
 |Feature|User Action|Expected Outcome|Expected Outcome achieved|Comments|
 |--|--|--|--|--|
@@ -98,7 +98,7 @@ Users
 
 ## Bugs
 ### Fixed Bugs
-+ Feedback messages for reporting users, posting or updating responses etc. initially did not work despit the code being present in the views.py file. It emerged this was because the code to display them had not been added to base.html, and they worked once it was.
++ Feedback messages for reporting users, posting or updating responses etc. initially did not work despite the code being present in the views.py file. It emerged this was because the code to display them had not been added to base.html, and they worked once it was.
 
 + The About Us link was initially non-responsive. This was due to an error in how the slug was being passed to the html template, and once the code was updated to use the url name only it was resolved
 
@@ -138,24 +138,31 @@ The python code was validated using the CI PEP8 linter by manually passing code 
 ## Lighthouse Report
 
 Thread List
+
 ![Thread List](documentation/lighthouse_reports/thread_list.png)
 
 Thread Content
+
 ![Thread Content](documentation/lighthouse_reports/thread_content.png)
 
 About Us
+
 ![About Us](documentation/lighthouse_reports/about_us.png)
 
 Login
+
 ![Login](documentation/lighthouse_reports/sign_in.png)
 
 Log Out
+
 ![Log Out](documentation/lighthouse_reports/sign_out.png)
 
 Register
+
 ![Register](documentation/lighthouse_reports/register.png)
 
 Report User
+
 ![Report User](documentation/lighthouse_reports/report_user.png)
 
 ## Compatibility testing
