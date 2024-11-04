@@ -1,7 +1,9 @@
 # Project Game
-Project Game is a gaming related news website modelled on sites such as Reddit and the Escapist where the site owner and can post articles (called threads) about news from the games industry or anything else related to the topic of video games. Registered users can participate in these threads by responding to them. The goal is to provide a space where those with an interest in gaming can discuss it and get to know other hobbyists.
+Project Game is a gaming related news website modelled on sites such as Reddit and the Escapist where the site owner can post articles (called threads) about news from the games industry or anything else related to the topic of video games. Registered users can participate in these threads by responding to them. The goal is to provide a space where those with an interest in gaming can discuss it and get to know other hobbyists.
 
-Live version: 
+Live version: https://project-game-c92562a03c3c.herokuapp.com/
+
+![Hero Image](documentation/deployment/deployed_site.png)
 
 This app is developed by Hugh Keenan
 
@@ -12,14 +14,14 @@ This site has been designed to have a simple easy to understand layout. The targ
 
 |Issue|User Story|
 |--|--|
-|[#1]|As a site user, I want to view a list of posts on each page so that I can choose which one I want to look at|
+|[#1]|As a site user, I want to view a list of threads on each page so that I can choose which one I want to look at|
 |[#2]|As a site user, I want to create an account so that I can access site features|
 |[#3]|As an authorised user, I want to be able to report users breaking site rules|
 |[#4]|As a site admin, I want to be able to see instances of reported users so that I can take appropriate action|
 |[#5]|As an authorised user, I want to be able to sign in so that I can use the forum|
 
 ### Colours and typography
-The colour scheme of the site was inspired by that of the forums on escapistmagazine.com. This was chosen because the colours are not distracting but provide a high enough contrast that everything is easily readable. Colours such as these are often used as standard in games consoles and websites, making the website more thematic.
+The colour scheme of the site was inspired by that of the forums on [escapistmagazine.com](https://forums.escapistmagazine.com/). This was chosen because the colours are not distracting but provide a high enough contrast that everything is easily readable. Colours such as these are often used as standard in games consoles and websites, making the website more thematic.
 
 ![Color palette](documentation/design/color_palette.png)
 
@@ -51,7 +53,7 @@ This variance of font styles on the page allowed elements to be visually distinc
 
 ### Databases
 + SQLite: database used during development 
-+ PostgreSQL: tUsed to store project data
++ PostgreSQL: Used to store project data
 
 ### Other tools
 + Git: Used for version control
@@ -71,10 +73,10 @@ This variance of font styles on the page allowed elements to be visually distinc
 + W3C Validator: Used to validate HTML code
 + W3C CSS validator: Used to validate CSS code
 + JShint: Used to validate JS code
-+ PEP8: Used to validate python code
++ CI Python Linter: Used to validate python code
 
 ## Features
-Please refer to [FEATURES.md] for a full breakdown of site features.
+Please refer to [FEATURES.md](FEATURES.md) for a full breakdown of site features.
 
 ### Wireframes & Flowcharts
 Wireframes for the site and the flowchart for how users interact with it are available through the following links:
@@ -82,7 +84,7 @@ Wireframes for the site and the flowchart for how users interact with it are ava
 
 [Organisational-Flowchart](documentation/diagrams/navigation_flowchart.pdf)
 
-There is a difference visible between the flowchart and wireframes and what was deployed. The differences in layout were decided on because the current layout was found to be as easy to read as the inital proposal, and required less adjustment for smaller and larger screen sizes, resulting in a more consistent layout. The proposed feature that would have allowed users to post and edit threads of their own was implemented but had to be removed from the project due to time constraints. Ongoing difficulties implementing the update and delete functionality caused significant delays and the feature had to be scrapped to ensure and MVP would be deployed. 
+There is a difference visible between the flowchart and wireframes and what was deployed. The differences in layout were decided on because the current layout was found to be as easy to read as the inital proposal, and required less adjustment for smaller and larger screen sizes, resulting in a more consistent layout. The proposed feature that would have allowed users to post and edit threads of their own was implemented but had to be removed from the project due to time constraints. Ongoing difficulties implementing the update and delete functionality caused significant delays and the feature had to be scrapped to ensure an MVP would be deployed. 
 
 ## Information Architecture
 ### ERD
@@ -142,12 +144,13 @@ Please see the [DEPLOYMENT.md](DEPLOYMENT.md) file for documentation related to 
 ## Credits
 + Django for providing the framework used to make the site.
 + Font awesome provided access to icons.
-+ Heroku providedfree hosting of the website.
-+ jQuery provided tools to make standard HTML code look appealing.
++ Heroku provided free hosting of the website.
++ Bootstrap enabled easy stling of the site.
++ jQuery helped with interactive elements
 + Coolors provided a platform to generate the color palette
 + Icons8 provided the favicon
 + Postgresql provided a free database
-+ Responsive Viewer provided a  platform to test website responsiveness
++ Responsive Viewer provided a platform to test website responsiveness
 + GoFullPage enabled the creation of free full web page screenshots
 + Favicon Generator provided a free platform to generate favicons
 + GameSpot.com, rockpapershotgun.com, kotaku.com, ign.com and pcgamer.com for providing text used in the threads
