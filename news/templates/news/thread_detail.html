@@ -25,9 +25,9 @@
       <div class="card-body" >
         <div>
         <!-- Thread body -->
-        <p class="card-text" id="thread{{ thread.id }}">
+        <div class="card-text" id="thread{{ thread.id }}">
           {{ thread.body | safe }}
-        </p>
+        </div>
         <hr>
       </div>
       </div>
@@ -54,8 +54,8 @@
               {{ response.content | linebreaks }}
             </div>
             {% if user.is_authenticated and response.poster == user %}
-            <button class="btn edit-response btn-dark" response_id="{{ response.id }}" aria-label="Edit response">Edit Response</button>
-            <button class="btn delete-response btn-dark" response_id="{{ response.id }}" aria-label="Delete response">Delete Response</button>
+            <button class="btn edit-response btn-dark" data-response_id="{{ response.id }}" aria-label="Edit response">Edit Response</button>
+            <button class="btn delete-response btn-dark" data-response_id="{{ response.id }}" aria-label="Delete response">Delete Response</button>
             {% endif %}
             <hr>
           </div>

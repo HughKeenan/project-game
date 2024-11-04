@@ -18,31 +18,35 @@ Using your repository, open a workspace in Gitpod
     python
     import os
 
-      os.environ['SECRET_KEY'] = 'Add a secret key'
-      os.environ['DATABASE_URL'] = 'will be used to connect to the database'
+      os.environ['SECRET_KEY'] = 'Choose your secret key'
+      os.environ['DATABASE_URL'] = 'URL to connect to the database'
       os.environ['DEBUG'] = 'True'
     ```
 
-+ During development DEBUG is set to True, but must be changed to False before final deployment
++ During development DEBUG is set to True, but must be changed to False before final deployment.
 
-4. To make migrations on updates to models, run the following in the terminal
+4. Create your database using https://dbs.ci-dbs.net/ 
+
++ You will receive a database key in an email after creating this. Post this to your env.py file
+
+5. To make migrations on updates to models, run the following in the terminal
     ```
         python3 manage.py makemigrations
         python3 manage.py migrate
     ```
 
-5. Create a superuser to access the admin environment.
+6. Create a superuser to access the admin environment.
     ```
         python3 manage.py createsuperuser
     ```
 + Enter the requested information (username, email and password).
 
-6. Run the app with the following command in the terminal:
+7. Run the app with the following command in the terminal:
     ```
         python3 manage.py runserver
     ```
 
-7. Open the provided link in browser to see your app.
+8. Open the provided link in browser to see your app.
 
 To access the admin environment:
 
@@ -63,7 +67,7 @@ Enter the superuser's username and password.
 
 ![Name and region](documentation/deployment/region_and_name.png)     
 
-+ Use the terminal command pip3 install gunicorn ~20.1 and freeze to your requirements.txt byt typing pip3 freeze local > requirements.txt in the terminal.
++ Use the terminal command pip3 install gunicorn ~20.1 and freeze to your requirements.txt by typing pip3 freeze local > requirements.txt in the terminal.
 
 + Create a Procfile in your workspace
 
@@ -76,7 +80,9 @@ Enter the superuser's username and password.
 
 + In the project's settings.py file, ensure Debug=False and add '.herokuapp.com' to the list of ALLOWED_HOSTS
 
-+ Navigate to the resources tab and ensure you are using an eco Dyno, and remove any Postgres database add-ons
++ Navigate to the resources tab in your heroku app and ensure you are using an eco Dyno, and remove any Postgres database add-ons
+
+![Resources](documentation/deployment/resources.png)
 
 + In the app's settings tab, open Config Vars 
 
@@ -87,9 +93,12 @@ Enter the superuser's username and password.
 | DISABLE_COLLECTSTATIC | 1 |
 | SECRET_KEY | <your choice of secret key> |
 
- 
++ ensure your DATABASE_URL and SECRET_KEY have been included in your env.py file 
+
 + Commit any changes made and push to Github
 
-+ Go into your app in Heroku, open the Deploy tab. search for your github repository and connect it to the app. Manually deploy the app from the main branch. You can also at this point set up automatic deploys so an up to date version will deploy every time you push to github.
++ Go into your app in Heroku, open the Deploy tab. search for your github repository at the bottom of the page and connect it to the app. Manually deploy the app from the main branch using the deploy branch button. You can also at this point set up automatic deploys so an up to date version will deploy every time you push to github.
 
-+ Ahead of final deployment, set debug to False locally and delete DISABLE_COLLECTSTATIC from config vars. Then commit and push the changes to GitHub.
+![Deploy Page](documentation/deployment/deploy_page.png)
+
++ Ahead of final deployment, set debug to False locally and delete DISABLE_COLLECTSTATIC from config vars. Then commit and push the changes to GitHub. If you have not set up automatic deploys, manually deploy one final time

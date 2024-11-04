@@ -13,7 +13,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 
   for (let button of editButtons) {
     button.addEventListener("click", (e) => {
-      let responseId = e.target.getAttribute("response_id");
+      let responseId = e.target.getAttribute("data-response_id");
       let responseContent = document.getElementById(`response${responseId}`).innerText;
       responseText.value = responseContent;
       submitButton.innerText = "Update";
@@ -26,7 +26,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
    */
   for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-      let responseId = e.target.getAttribute("response_id");
+      let responseId = e.target.getAttribute("data-response_id");
       deleteConfirm.href = `delete_response/${responseId}`;
       deleteModal.show();
     });

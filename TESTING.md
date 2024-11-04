@@ -116,7 +116,7 @@ Users
 ## Code Validation
 
 ### HTML Validation
-The HTML code was validated using the W3C checker. The only errors that appeared were related to the helptext passed in by allauth in the case of signup.html, and the content coming through from the backend in the case of thread_detail.html
+The HTML code was validated using the W3C checker. No errors were detected.
 
 [HTML Validation Report](documentation/validation/html.pdf)
 
