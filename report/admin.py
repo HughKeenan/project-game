@@ -1,3 +1,4 @@
+"""admin for the report app"""
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Report, ReportUser

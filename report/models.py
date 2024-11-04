@@ -1,3 +1,4 @@
+"""models for report app"""
 from django.db import models
 
 

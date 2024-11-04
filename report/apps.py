@@ -1,3 +1,4 @@
+"""apps for the report app"""
 from django.apps import AppConfig
 
 

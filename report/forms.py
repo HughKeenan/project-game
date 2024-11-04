@@ -1,3 +1,4 @@
+"""forms for the report app"""
 from django import forms
 from .models import ReportUser
 

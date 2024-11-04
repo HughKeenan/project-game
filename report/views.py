@@ -1,3 +1,4 @@
+"""views for the report app"""
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -5,11 +6,20 @@ from .models import Report
 from .forms import ReportUserForm
 
 
-# Create your views here.
 @login_required()
 def report_guide(request):
     """
-    Renders the Report page
+    Display the report page.
+
+    **Context**
+
+    ``report``
+        An instance of :model:`report.Report`
+    ``report_user``
+        The form to post reports
+    **Template:**
+
+    :template:`news/report.html`
     """
     report = Report.objects.all().order_by('-updated_on').first()
     report_user = ReportUserForm()

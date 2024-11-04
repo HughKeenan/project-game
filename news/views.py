@@ -1,3 +1,4 @@
+"""views for news app"""
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.urls import reverse
@@ -18,13 +19,18 @@ class ThreadList(generic.ListView):
 
 def thread_detail(request, slug):
     """
-    Display an individual :model:`news.Thread`.
+    Display an individual thread.
 
     **Context**
 
     ``thread``
-        An instance of :model:`news.Thread`.
-
+        An instance of :model:`news.Thread`
+    ``responses``
+        all responses related to the thread
+    ``reponse_count``
+        The number of responses to the thread
+    ``response_form``
+        The form to post responses
     **Template:**
 
     :template:`news/thread_detail.html`
@@ -61,6 +67,15 @@ def thread_detail(request, slug):
 def response_edit(request, slug, response_id):
     """
     view to edit responses
+
+    **Context**
+
+    ``thread``
+        An instance of :model:`news.Thread`
+    ``response``
+        a response related to the thread
+    ``response_form``
+        The form to edit responses
     """
     if request.method == "POST":
 
@@ -85,6 +100,13 @@ def response_edit(request, slug, response_id):
 def response_delete(request, slug, response_id):
     """
     view to delete responses
+
+    **Context**
+
+    ``thread``
+        An instance of :model:`news.Thread`
+    ``response``
+        a response related to the thread
     """
     queryset = Response.objects.filter(visible=True)
     thread = get_object_or_404(Thread, slug=slug)
