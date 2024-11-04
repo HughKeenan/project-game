@@ -61,7 +61,7 @@ Enter the superuser's username and password.
 
 ![Create New App](documentation/deployment/new_app.png)
 
-- Name the app (the app must have aunique name) and select the appropriate region for your location (Europe or America).
+- Name the app (the app name must be unique) and select the appropriate region for your location (Europe or America).
 
 ![Name and region](documentation/deployment/region_and_name.png)     
 
@@ -88,11 +88,17 @@ Enter the superuser's username and password.
 
 | Key|Value|
 |--|--|
-| DATABASE_URL | <CI postgres database url> | 
+| DATABASE_URL | "CI postgres database url" | 
 | DISABLE_COLLECTSTATIC | 1 |
-| SECRET_KEY | <your choice of secret key> |
+| SECRET_KEY | "your choice of secret key" |
 
 - ensure your DATABASE_URL and SECRET_KEY have been included in your env.py file 
+
+- migrate all changes in gitpod by typing the following:
+    ```
+        python3 manage.py makemigrations
+        python3 manage.py migrate
+    ```
 
 - Commit any changes made and push to Github
 
