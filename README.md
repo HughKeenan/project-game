@@ -156,6 +156,7 @@ Please see the [DEPLOYMENT.md](DEPLOYMENT.md) file for documentation related to 
 + GameSpot.com, rockpapershotgun.com, kotaku.com, ign.com and pcgamer.com for providing text used in the threads
 + CodeInstitute.com: the Codestar project provided part of the inspiration for this project as well as an example of how to structure the code
 
+The username 'CoraB' that appears on the site is a reference to Cora Breen, my girlfriend who provided non-technical feedback and testing on the site. This was done with her full knowledge and consent.
 
 ## Acknowledgements
 I wish to acknowledge my mentor Iuliia Konovalova, who provided valuable advice and feedback throughout this project. I also wish to acknowledge Cora Breen, who provided external testing, and the student support team, whose help aided in the resoltion of technical issues.
