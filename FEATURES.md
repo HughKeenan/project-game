@@ -1,6 +1,6 @@
 The site has the following pages:
 + Thread list (home page)
-+ Thread content
++ Thread content (content page for a given thread)
 + Register
 + Login
 + Logout
@@ -122,7 +122,7 @@ The user will also receive a message to say that they have posted
 
 ![Posted message](documentation/features/thread_content/posted_message.png)
 
-If the user decides to update by pressing the update button below the form, the response form will repopulate with the text of their response. The button below will also change to say update.
+If the user decides to update by pressing the edit button below their response, the response form will repopulate with the text of their response. The button below will also change to say update.
 
 ![Update Response](documentation/features/thread_content/update_response.png)
 
@@ -172,7 +172,7 @@ If the user uses an incorrect password, they will see the following:
 
 ![Wrong Password](documentation/features/sign_in/wrong_password.png)
 
-If the user signs in successfully, they will be redirected to the home page and receive the following message:
+If the user signs in successfully, they will be redirected to the home page and receive amessage like the following, updated for their username:
 
 ![Successful Sign in](documentation/features/sign_in/successful_sign_in.png)
 
@@ -187,7 +187,7 @@ If they sign out they will be redirected to the home page and they will receive 
 
 ### Report User
 
-This page is available to users to report others for inappropriate behavious on the site. By clicking the Report User button in the navbar, this will open in a separate window.
+This page is available to users to report others for inappropriate behaviour on the site. By clicking the Report User button in the navbar, this will open in a separate window. It was decided that opening it in a new window would be better as it means the user can more easily refer to what they wish to report without having to reset the report form.
 
 ![Report User](documentation/features/report_user/report_user.png)
 
@@ -235,7 +235,7 @@ The report guidelines can be updated in much the same way as a thread by selecti
 
 To view submitted reports, select Report Users. The title is visible, as is the status of whether or not it has been looked at yet. 
 
-![Reports on users](documentation/features/admin/reports.png)
+![Reports on users](documentation/features/admin/report_users_.png)
 
 By selecting it, the superuser can review it and once satisfied, change the status to examined
 
@@ -261,6 +261,6 @@ And after:
 
 ![Invisible Response](documentation/features/admin/invisible_response.png)
 
-Once the response has been rendered invisible, reported users can have their accounts disabled. To do this, select users from the menu and then the porfile of the specific user being reported. Once in there, the Active box can be unchecked, at which point the user will be unable to log in until it is unchecked. Users can then be deleted if necessary. Any responses will remain on the database, again in case they contain anything requiring further investigation.
+Once the response has been rendered invisible, reported users can have their accounts disabled. To do this, select users from the menu and then the profile of the specific user being reported. Once in there, the Active box can be unchecked, at which point the user will be unable to log in until it is unchecked. Users can then be deleted if necessary. Any responses will remain on the database, again in case they contain anything requiring further investigation.
 
 ![User details](documentation/features/admin/user_details.png)
