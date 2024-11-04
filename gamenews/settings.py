@@ -18,7 +18,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Debug
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['8000-hughkeenan-projectgame-xm7xkda49g8.ws.codeinstitute-ide.net',

@@ -35,6 +35,11 @@
     margin: 0;
 }
 
+.navbar-margin{
+    margin-right: 0;
+    padding: 0;
+}
+
 /*Body style rules*/
 body{
     background-color: rgb(124, 195, 249);

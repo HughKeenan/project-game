@@ -3,6 +3,12 @@
     background-color: rgb(179, 192, 204);
 }
 
+.messagebox{
+    background-color: rgb(179, 192, 204);
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+}
 
 /*Navbar style rules*/
 .sitename{
@@ -29,6 +35,11 @@
     margin: 0;
 }
 
+.navbar-margin{
+    margin-right: 0;
+    padding: 0;
+}
+
 /*Body style rules*/
 body{
     background-color: rgb(124, 195, 249);
@@ -42,6 +53,11 @@ main{
     margin-bottom: 10rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     min-height: 50vh;
+}
+
+.signInNotice{
+    padding-left: 2.5vw;
+    font-size: 125%;
 }
 
 /*Footer style rules*/
@@ -73,9 +89,12 @@ main{
     border-radius: 10px;
 }
 
+.edit-response, .delete-response{
+    margin-top: 10px;
+}
+
 
 /*Media query for phones*/
-
 @media screen and (max-width: 425px){
 
     .navlist{
@@ -85,6 +104,7 @@ main{
     main{
         max-width: 90vw;
         padding-left: 5vw;
+        min-height: 70vh;
     }
 
     .signin, .signout{
@@ -111,6 +131,7 @@ main{
     main{
         max-width: 90vw;
         padding-left: 5vw;
+        min-height: 70vh;
     }
 
     .signin, .signout{
@@ -128,6 +149,12 @@ main{
 @media screen and (min-width: 768px) {
     .navbar-expand-lg {
        padding: 15px;
+    }
+
+    main{
+        max-width: 90vw;
+        padding-left: 5vw;
+        min-height: 70vh;
     }
 }
 
