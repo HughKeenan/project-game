@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Thread, Response
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Thread, Response
 
 
 @admin.register(Thread)

@@ -131,7 +131,7 @@ The js for the project was validated using the jshint validator. It passed throu
 [JS Validation Report](documentation/validation/js.png)
 
 ### Python validation 
-The python code was validated using the CI PEP8 linter by manually passing code into it. No errors were detected.
+The python code was validated using the CI PEP8 linter by manually passing code into it. The code is Pep8 compliant.
 
 [Python Validation Report](documentation/validation/python.pdf)
 

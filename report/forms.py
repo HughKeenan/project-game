@@ -1,5 +1,5 @@
-from .models import ReportUser
 from django import forms
+from .models import ReportUser
 
 
 # form to report users

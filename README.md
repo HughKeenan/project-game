@@ -137,7 +137,7 @@ Provides structure for users to input information when reporting others that adm
 For full details of testing , please see [TESTING.md](TESTING.md)
 
 ## Deployment
-Please see the DEPLOYMENT.md file for documentation related to deployment
+Please see the [DEPLOYMENT.md](DEPLOYMENT.md) file for documentation related to deployment
 
 ## Credits
 + Django for providing the framework used to make the site.

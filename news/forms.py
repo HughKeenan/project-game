@@ -1,5 +1,5 @@
-from .models import Response, Thread
 from django import forms
+from .models import Response, Thread
 
 
 # form to post and edit responses
